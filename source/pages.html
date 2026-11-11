@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>UIA 2026 Annual Report pages</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+/* 쪽 크기 1200 x 1600 (3:4). 색은 UIA 사이트와 같은 값: 무채색, 노랑 #fdc51b, 파랑 #2d9ed9, 빨강 #e94545 */
+:root{--y:#fdc51b;--b:#2d9ed9;--r:#e94545;--paper:#f2f2f2;--white:#fff;--ink:#212120;--ink2:#3c3c3c;--mute:#838384;--line:#e5e5e5;--m:96px;
+  --sans:'Pretendard Variable','Pretendard',sans-serif;--latin:'Barlow','Pretendard Variable',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#777;font:400 24px/1.7 var(--sans);letter-spacing:-.01em;color:var(--ink);word-break:keep-all;line-break:strict;-webkit-font-smoothing:antialiased}
+.page{position:relative;width:1200px;height:1600px;overflow:hidden;background:var(--paper);display:none}
+body[data-all] .page{display:block;margin:0 0 40px}
+.page.on{display:block}
+.dark{background:var(--ink);color:#f2f2f2}
+.pad{position:absolute;inset:var(--m)}
+.folio{position:absolute;left:var(--m);right:var(--m);bottom:56px;display:flex;justify-content:space-between;font:600 20px/1.4 var(--sans);letter-spacing:-.005em;color:var(--mute)}
+.dark .folio{color:#adaeae}
+h1,h2,h3,p{text-wrap:pretty}
+h1,h2,h3{text-wrap:balance}
+.t-display{font:800 150px/.96 var(--latin);letter-spacing:-.035em;text-transform:uppercase}
+.t-h1{font:800 84px/1.0 var(--latin);letter-spacing:-.035em;text-transform:uppercase}
+.t-h2{font:700 44px/1.2 var(--latin);letter-spacing:-.03em}
+.t-h3{font:700 34px/1.2 var(--latin);letter-spacing:-.03em}
+.en{font:500 28px/1.6 var(--sans);letter-spacing:-.012em;color:var(--ink2)}
+.dark .en{color:#e5e5e5}
+.ko{font:500 24px/1.7 var(--sans);letter-spacing:-.02em;color:var(--mute)}
+.dark .ko{color:#adaeae}
+.ko-lg{font:600 38px/1.35 var(--sans);letter-spacing:-.035em;color:var(--mute)}
+.ph{display:inline-block}
+.photo{position:absolute;border-radius:24px;overflow:hidden;background:var(--line);box-shadow:0 2px 4px rgba(33,33,32,.06),0 14px 36px rgba(33,33,32,.14)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.bleed{position:absolute;left:0;right:0;top:0;overflow:hidden}
+.bleed img{width:100%;height:100%;object-fit:cover;display:block}
+.shape{position:absolute}
+.shape svg{display:block;width:100%;height:100%}
+.orbs{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.orb{position:relative;aspect-ratio:1;display:grid;place-items:center}
+.orb::before{content:'';position:absolute;inset:7%;border-radius:50%;background:linear-gradient(180deg,#161615 0%,#161615 22%,var(--c) 66%,var(--paper) 100%);filter:blur(14px)}
+.orb span{position:relative;font:600 30px/1.25 var(--latin);letter-spacing:-.01em;color:#f2f2f2;text-align:center;transform:translateY(8%)}
+.sym{position:relative;aspect-ratio:1;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(33,33,32,.06),0 12px 30px rgba(33,33,32,.12)}
+.sym img{position:absolute;inset:17%;width:66%;height:66%;object-fit:contain}
+.poster{position:absolute;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 2px 4px rgba(33,33,32,.08),0 18px 44px rgba(33,33,32,.2)}
+.poster img{width:100%;height:100%;object-fit:cover;display:block}
+.cap{font:600 22px/1.4 var(--sans);letter-spacing:-.01em;color:var(--ink)}
+.cap small{display:block;font:500 20px/1.5 var(--sans);color:var(--mute);letter-spacing:-.02em}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+const A='assets/';
+const ph=s=>s.includes('/')?s.split('/').map(p=>'<span class="ph">'+p+'</span>').join(' '):s;
+const MARK=(c,h)=>`<svg viewBox="0 0 288 132" style="height:${h}px;width:auto" fill="none" stroke="${c}" stroke-width="30" stroke-linecap="round"><path d="M45 45 V82 A30 30 0 0 0 75 112"/><path d="M75 112 A30 30 0 0 0 105 82 V45"/><path d="M150 45 V112"/><circle cx="218" cy="82" r="30"/><path d="M248 47 V112"/><g fill="${c}" stroke="none"><circle cx="45" cy="45" r="15"/><circle cx="105" cy="45" r="15"/><circle cx="75" cy="112" r="15"/><circle cx="150" cy="16" r="14"/><circle cx="150" cy="112" r="15"/><circle cx="188" cy="82" r="14"/><circle cx="248" cy="47" r="14"/><circle cx="248" cy="112" r="15"/></g></svg>`;
+const RING=`<svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#fdc51b"/><circle cx="200" cy="200" r="140" fill="var(--bgc,#f2f2f2)"/><circle cx="200" cy="200" r="86" fill="#fdc51b"/><circle cx="200" cy="200" r="34" fill="var(--bgc,#f2f2f2)"/></svg>`;
+const WAVE=`<svg viewBox="0 0 400 200" fill="none" stroke="#2d9ed9" stroke-width="42"><path d="M20 160c0-90 80-90 80-20s90 70 90-20 90-90 90 0 80 70 80 10"/></svg>`;
+const DOT=`<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="#e94545"/></svg>`;
+const img=(f)=>`<img src="${f}" alt="">`;
+
+/* 사진 자리. 파일 이름만 바꾸면 쪽이 다시 구워진다. */
+const PHOTOS={
+  cc:['cc-group-1','cc-group-2'].map(n=>A+'photos/'+n+'.jpg'),
+  ccGrid:['p6','p12','p24','p82','p129','p134'].map(n=>A+'photos/'+n+'.jpg'),
+  sgGrid:['p235','p254','p279','p284','p303','p314'].map(n=>A+'photos/'+n+'.jpg'),
+  gjGrid:['p165','p169','p175','p207','p211','p232'].map(n=>A+'photos/'+n+'.jpg'),
+  sgStrip:['p239','p308'].map(n=>A+'photos/'+n+'.jpg'), ccOpen:A+'photos/cc-group-1.jpg', sgOpen:A+'photos/sg-booth-team.jpg', gjOpen:A+'photos/gj-hall.jpg',
+};
+if(window.__PHOTOS) Object.assign(PHOTOS,window.__PHOTOS);
+
+const PEOPLE=[
+ {n:'김현지',s:'건국대학교 문과대학 자유전공학부',t:'저는 UIA를 대학의 경계를 넘어 모인 청년들이 사회에 의미 있는 임팩트를 만들어내는 곳이라고 생각합니다. 경주세계포럼에 참가했을 때, 다양한 대학의 학생들과 \'현 사회에서 겪는 불편함\'을 주제로 이야기를 나눴습니다. 각자의 불편한 경험을 공유하고 아이디어를 제시하는 과정에서 진정한 \'소통\'이 무엇인지 느낄 수 있었습니다.'},
+ {n:'윤하늘',s:'서울여자대학교 아동학과',t:'UIA는 하나의 활동이 끝나면 또 다른 기회와 새로운 프로젝트로 이어지며 경험의 폭이 확장되는 곳이라고 느꼈습니다. 평소 관심을 갖지 않았거나 스스로 도전할 생각조차 하지 못했던 분야까지 경험하면서 제가 미처 알지 못했던 새로운 관심사와 가능성을 발견할 수 있었습니다.'},
+ {n:'박정수',s:'한신대학교 독일어문화학과, 글로벌비즈니스',t:'제가 생각하는 UIA는 좋은 사람들을 만나 나를 바꿔가는 기회입니다. 생각보다 훨씬 좋은 사람들을 만나게 되었고, 각자의 자리에서 열심히 살아가는 사람들을 보며 저 역시 많은 자극을 받았습니다. 지금은 단순히 활동을 함께하는 관계를 넘어 서로에게 좋은 영향을 주고받는 커뮤니티가 되었다고 생각합니다.'},
+ {n:'김태준',s:'건국대학교 식품과학, 생물공학과',t:'제가 생각하는 UIA는 학생들이 적극적으로 실패하는 법을 배우는 곳입니다. 넘어지는 것을 두려워하지 않기에 기꺼이 부딪히며, 넘어진 자리에서 다시 일어나 또 도전하는 곳으로 다음 걸음을 준비하는 곳이기도 합니다. 놀이터에서는 넘어지는 일이 자연스럽고, 다시 일어나 뛰는 과정에서 조금씩 더 잘하게 됩니다.'},
+];
+const UNIS=[['catholic.svg','The Catholic University of Korea','가톨릭대학교'],['konkuk.svg','Konkuk University','건국대학교'],['korea.svg','Korea University','고려대학교 서울, 세종'],['sogang.png','Sogang University','서강대학교'],['hanyang.svg','Hanyang University','한양대학교 서울, ERICA'],['seoulwu.svg',"Seoul Women's University",'서울여자대학교'],['handong.svg','Handong Global University','한동대학교'],['hallym.svg','Hallym University','한림대학교'],['hanshin.svg','Hanshin University','한신대학교']];
+
+const folio=(n,l)=>`<div class="folio"><span>UIA Annual Report 2026</span><span>${n}</span></div>`;
+const gridPhotos=(arr,x0,y0,w,h,gap)=>{ // 2열 3행
+  const cw=(w-gap)/2, rh=(h-gap*2)/3; return arr.map((src,i)=>`<div class="photo" style="left:${x0+(i%2)*(cw+gap)}px;top:${y0+Math.floor(i/2)*(rh+gap)}px;width:${cw}px;height:${rh}px">${img(src)}</div>`).join('');
+};
+
+const pages=[];
+// 0 표지
+pages.push(`<section class="page dark" id="p0" style="--bgc:#212120">
+ <div class="shape" style="right:-170px;top:130px;width:780px;height:780px">${RING}</div>
+ <div class="shape" style="left:-90px;top:390px;width:640px;height:320px">${WAVE}</div>
+ <div class="shape" style="left:400px;top:250px;width:170px;height:170px">${DOT}</div>
+ <div class="pad">
+  <div style="color:#f2f2f2">${MARK('#f2f2f2',72)}</div>
+  <div style="position:absolute;left:0;bottom:120px;right:0">
+   <h1 class="t-display" style="color:#f2f2f2">2026<br>Annual<br>Report</h1>
+   <p class="ko-lg" style="color:#adaeae;margin-top:30px">2026 대학 임팩트 얼라이언스 연간 보고서</p>
+   <p class="en" style="margin-top:34px;color:#e5e5e5">University Impact Alliance</p>
+  </div>
+ </div></section>`);
+// 1 목차
+const toc=[['About UIA','UIA는',2],['4C Strategy','4C 전략',3],['Partner universities','함께하는 대학',4],['2026 at a glance','2026년 활동',5],['Impactthon Chuncheon','임팩톤@춘천',6],['Social Value Festa','사회적가치 페스타',9],['Gyeongju Forum','경주 포럼',12],['In their words','참여 학생의 말',15],['UIA Special Hall','UIA 특별관',17]];
+pages.push(`<section class="page" id="p1"><div class="pad">
+ <h1 class="t-h1">Contents</h1><p class="ko-lg" style="margin-top:14px">목차</p>
+ <div style="margin-top:90px;display:grid;gap:34px">${toc.map(([e,k,n])=>`<div style="display:grid;grid-template-columns:1fr auto;align-items:baseline"><div><div class="t-h2">${e}</div><div class="ko" style="margin-top:2px">${k}</div></div><div class="t-h3" style="color:var(--mute)">${n}</div></div>`).join('')}</div>
+ </div>${folio(1)}</section>`);
+// 2 About
+pages.push(`<section class="page" id="p2"><div class="pad">
+ <h1 class="t-h1">About UIA</h1><p class="ko-lg" style="margin-top:14px">UIA는</p>
+ <div style="margin-top:70px;display:grid;gap:44px;max-width:900px">
+  <div><p class="en">UIA is a university social innovation network. Leading universities and social innovation organizations in Korea join forces to raise a generation that helps solve social and environmental problems.</p>
+  <p class="ko" style="margin-top:12px">${ph('국내 주요 대학과 사회혁신 생태계 조직이 연대하여,/사회와 환경 문제 해결에 기여하는/미래세대를 양성하는/대학 사회혁신 협력 네트워크입니다.')}</p></div>
+  <div><p class="en">By connecting each university's education and research strengths, talent and local networks, we build learning and impact that no single university could create alone.</p>
+  <p class="ko" style="margin-top:12px">${ph('각 대학의 교육과 연구 역량, 인재,/지역사회 네트워크를 연결해/한 대학이 혼자서는 만들 수 없는/배움과 임팩트를 함께 만듭니다.')}</p></div>
+ </div>
+ <div class="photo" style="left:0;right:0;bottom:90px;height:520px">${img(PHOTOS.ccOpen)}</div>
+ </div>${folio(2)}</section>`);
+// 3 4C
+const FOURC=[['Connecting','#2d9ed9','We connect university to university, student to student, and professors to local communities.','대학과 대학, 학생과 학생,/교수와 지역사회를 연결합니다'],['Co-Learning','#fdc51b','Members from many majors and universities learn together at the sites of social problems.','다양한 전공과 대학의 구성원이/사회문제 현장에서 함께 배웁니다'],['Co-Creating','#e94545','We create new solutions together by joining university knowledge with field expertise.','대학의 지식과 현장의 전문성으로/새로운 해결책을 함께 만듭니다'],['Collective Impact','#c4c2c1','We spread knowledge and solutions to regions and society to build collective impact.','지식과 해결책을 지역과 사회로 확산해/집합적 임팩트를 만듭니다']];
+pages.push(`<section class="page" id="p3"><div class="pad">
+ <h1 class="t-h1">UIA's 4C Strategy</h1><p class="ko-lg" style="margin-top:14px">UIA의 4C 전략</p>
+ <div class="orbs" style="position:absolute;left:-30px;top:250px;width:560px">${FOURC.map(c=>`<div class="orb" style="--c:${c[1]}"><span>${c[0]==='Collective Impact'?'Collective<br>Impact':c[0]}</span></div>`).join('')}</div>
+ <div style="position:absolute;left:560px;right:0;top:270px;display:grid;gap:40px">${FOURC.map(c=>`<div><div class="t-h3">${c[0]}</div><p class="en" style="font-size:25px;margin-top:6px">${c[2]}</p><p class="ko" style="font-size:22px">${ph(c[3])}</p></div>`).join('')}</div>
+ </div>${folio(3)}</section>`);
+// 4 파트너
+pages.push(`<section class="page" id="p4"><div class="pad">
+ <h1 class="t-h1">Partner<br>universities</h1><p class="ko-lg" style="margin-top:14px">함께하는 대학</p>
+ <p class="en" style="margin-top:40px;max-width:900px;font-size:26px">Universities and Root Impact work together. Each university joins in its own color, and any university that runs social innovation education is welcome to join at any time.</p>
+ <div style="position:absolute;left:0;right:0;top:500px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px 30px">${UNIS.map(u=>`<div><div class="sym" style="width:176px"><img src="${A}symbols/${u[0]}" alt=""></div><div class="cap" style="margin-top:16px">${u[1]}<small>${u[2]}</small></div></div>`).join('')}</div>
+ </div>${folio(4)}</section>`);
+// 5 2026 한눈에
+const EV=[['Jul 16 to 18','7월 16일부터 18일까지','Impactthon Chuncheon','임팩톤@춘천','Chuncheon','춘천'],['Sep 22','9월 22일','Social Value Festa','사회적가치 페스타','COEX, Seoul','서울 코엑스'],['Oct 8 to 9','10월 8일부터 9일까지','World Gyeongju Forum','경주 포럼','Gyeongju','경주'],['Nov 27 to 29','11월 27일부터 29일까지','Social Solidarity Economy Expo, UIA Special Hall','사회연대경제박람회 UIA 특별관','KINTEX, Goyang','고양 킨텍스']];
+pages.push(`<section class="page" id="p5"><div class="pad">
+ <h1 class="t-h1">2026<br>at a glance</h1><p class="ko-lg" style="margin-top:14px">2026년 활동</p>
+ <div style="position:absolute;left:0;right:0;top:420px;display:grid;gap:56px">${EV.map(e=>`<div style="display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:baseline"><div><div class="t-h3">${e[0]}</div><div class="ko">${e[1]}</div></div><div><div class="t-h2" style="font-size:40px">${e[2]}</div><div class="ko" style="font-size:24px">${e[3]}</div><div class="en" style="font-size:24px;margin-top:6px">${e[4]}, ${e[5]}</div></div></div>`).join('')}</div>
+ </div>${folio(5)}</section>`);
+// 6 춘천 오프너
+pages.push(`<section class="page" id="p6"><div class="bleed" style="height:860px">${img(PHOTOS.ccOpen)}</div>
+ <div class="pad" style="top:930px"><h1 class="t-h1">Impactthon<br>Chuncheon</h1><p class="ko-lg" style="margin-top:12px">임팩톤@춘천</p>
+ <p class="en" style="margin-top:34px;max-width:960px;font-size:26px">Students from the UIA universities gathered in Chuncheon for three days and two nights, July 16 to 18, and studied problems of population, space and tourism through field research and design thinking.</p>
+ <p class="ko" style="margin-top:8px;font-size:23px">${ph('UIA 대학 학생들이 7월 16일부터 18일까지 2박 3일 동안 춘천에 모여/인구, 공간, 관광 문제를/현장조사와 디자인씽킹으로 탐구했습니다.')}</p></div>${folio(6)}</section>`);
+// 7 춘천 사진
+pages.push(`<section class="page" id="p7"><div class="pad"><h2 class="t-h2">On the ground in Chuncheon</h2><p class="ko" style="margin-top:4px">춘천 현장</p>${gridPhotos(PHOTOS.ccGrid,0,150,1008,1250,24)}</div>${folio(7)}</section>`);
+// 포스터 2열 2행
+const poster2=(items)=>items.map((p,i)=>{const w=366,h=518,gx=108+(i%2)*(w+60),gy=140+Math.floor(i/2)*(h+108);return `<div class="poster" style="left:${gx}px;top:${gy}px;width:${w}px;height:${h}px">${img(A+'posters/'+p[0]+'.jpg')}</div><div class="cap" style="position:absolute;left:${gx}px;top:${gy+h+14}px;width:${w}px">${p[1]}<small>${p[2]}</small></div>`}).join('');
+const posterRow=(items,top,w,h,gap)=>items.map((p,i)=>`<div class="poster" style="left:${i*(w+gap)}px;top:${top}px;width:${w}px;height:${h}px">${img(A+'posters/'+p[0]+'.jpg')}</div><div class="cap" style="position:absolute;left:${i*(w+gap)}px;top:${top+h+14}px;width:${w}px">${p[1]}<small>${p[2]}</small></div>`).join('');
+// 8 춘천 프로젝트
+pages.push(`<section class="page" id="p8"><div class="pad"><h2 class="t-h2">Projects from Chuncheon</h2><p class="ko" style="margin-top:4px">춘천 임팩톤 프로젝트</p>
+ ${poster2([['cc-soyang','Soyang Art Circle, 1st place','소양아트서클, 1등'],['cc-bomnaerun','Bomnae Run, 2nd place','봄내런, 2등'],['cc-volumeup','Volume Up!, joint 3rd place','볼륨업, 공동 3등'],['cc-salon','Salon Project 2.0, joint 3rd place','살롱 프로젝트 2.0, 공동 3등']])}
+ </div>${folio(8)}</section>`);
+// 9 사가페 오프너
+pages.push(`<section class="page" id="p9"><div class="bleed" style="height:860px">${img(PHOTOS.sgOpen)}</div>
+ <div class="pad" style="top:930px"><h1 class="t-h1">Social Value<br>Festa</h1><p class="ko-lg" style="margin-top:12px">사회적가치 페스타</p>
+ <p class="en" style="margin-top:34px;max-width:960px;font-size:26px">On September 22 at COEX in Seoul, UIA ran a booth and held the session "UIA x Hanyang University Next Impact Forum".</p>
+ <p class="ko" style="margin-top:8px;font-size:23px">${ph('9월 22일 서울 코엑스에서/UIA 부스를 운영하고/UIA x 한양대학교 Next Impact Forum 세션을 열었습니다.')}</p></div>${folio(9)}</section>`);
+// 10 사가페 사진
+pages.push(`<section class="page" id="p10"><div class="pad"><h2 class="t-h2">Booth and session</h2><p class="ko" style="margin-top:4px">부스와 세션 현장</p>${gridPhotos(PHOTOS.sgGrid,0,150,1008,1250,24)}</div>${folio(10)}</section>`);
+// 11 사가페 포스터와 사진 띠
+pages.push(`<section class="page" id="p11"><div class="pad"><h2 class="t-h2">Posters from the Festa</h2><p class="ko" style="margin-top:4px">사회적가치 페스타 포스터</p>
+ ${posterRow([['sg-session','UIA x Hanyang University Next Impact Forum','세션 결과 보고'],['sg-booth','UIA booth results','부스 활동 결과']],150,400,566,208)}
+ <div class="photo" style="left:0;top:900px;width:492px;height:420px">${img(PHOTOS.sgStrip[0])}</div><div class="photo" style="left:516px;top:900px;width:492px;height:420px">${img(PHOTOS.sgStrip[1])}</div></div>${folio(11)}</section>`);
+// 12 경주 오프너
+pages.push(`<section class="page" id="p12"><div class="bleed" style="height:860px">${img(PHOTOS.gjOpen)}</div>
+ <div class="pad" style="top:930px"><h1 class="t-h1">Gyeongju<br>Forum</h1><p class="ko-lg" style="margin-top:12px">경주 포럼</p>
+ <p class="en" style="margin-top:34px;max-width:960px;font-size:26px">At the World Gyeongju Forum on October 8 and 9, four university sessions gave students a workshop on culture, climate and local business.</p>
+ <p class="ko" style="margin-top:8px;font-size:23px">${ph('10월 8일과 9일 세계경주포럼에서/네 개 대학이 세션을 열어/문화, 기후, 로컬 비즈니스를 주제로 한 워크숍을 진행했습니다.')}</p></div>${folio(12)}</section>`);
+// 13 경주 네 세션
+pages.push(`<section class="page" id="p13"><div class="pad"><h2 class="t-h2">Four sessions</h2><p class="ko" style="margin-top:4px">네 개 대학의 세션 수상작</p>
+ ${poster2([['gj-korea','Dadok Dadok','고려대학교'],['gj-hanyang-1','Global impact of<br>Hwangridan-gil brands','한양대학교'],['gj-seoulwu',"Seoul Women's University<br>session winner",'서울여자대학교'],['gj-handong','Handong Global University<br>session winner','한동대학교']])}
+ </div>${folio(13)}</section>`);
+// 14 경주 사진
+pages.push(`<section class="page" id="p14"><div class="pad"><h2 class="t-h2">Inside the sessions</h2><p class="ko" style="margin-top:4px">경주 세션 현장</p>${gridPhotos(PHOTOS.gjGrid,0,150,1008,1250,24)}</div>${folio(14)}</section>`);
+// 15, 16 사람
+const personBlock=(p,top)=>`<div style="position:absolute;left:0;right:0;top:${top}px"><div class="t-h2" style="font-family:var(--sans);font-weight:700;letter-spacing:-.035em">${p.n}</div><p class="ko" style="margin-top:2px">${p.s}</p><p style="margin-top:26px;font:500 30px/1.9 var(--sans);letter-spacing:-.02em;color:var(--ink2);max-width:980px">${p.t}</p></div>`;
+pages.push(`<section class="page" id="p15"><div class="pad"><h2 class="t-h2">In their words</h2><p class="ko" style="margin-top:4px">참여 학생의 말</p>${personBlock(PEOPLE[0],190)}${personBlock(PEOPLE[1],800)}</div>${folio(15)}</section>`);
+pages.push(`<section class="page" id="p16"><div class="pad"><h2 class="t-h2">In their words</h2><p class="ko" style="margin-top:4px">참여 학생의 말</p>${personBlock(PEOPLE[2],190)}${personBlock(PEOPLE[3],800)}</div>${folio(16)}</section>`);
+// 17 특별관
+pages.push(`<section class="page dark" id="p17" style="--bgc:#212120"><div class="shape" style="right:-210px;bottom:-210px;width:760px;height:760px">${RING}</div><div class="shape" style="left:-120px;top:930px;width:640px;height:320px">${WAVE}</div>
+ <div class="pad"><h1 class="t-h1" style="color:#f2f2f2">UIA<br>Special Hall</h1><p class="ko-lg" style="margin-top:14px;color:#adaeae">UIA 특별관</p>
+ <p class="en" style="margin-top:50px;max-width:900px;font-size:30px">At the 8th Social Solidarity Economy Expo, student work, photos and voices from Impactthon Chuncheon, the Social Value Festa and the Gyeongju Forum come together in one hall.</p>
+ <p class="ko" style="margin-top:10px;font-size:25px">${ph('제8회 대한민국 사회연대경제박람회에서/임팩톤@춘천, 사회적가치 페스타, 경주 포럼의/학생 활동 결과와 사진, 목소리를 한자리에 모았습니다.')}</p>
+ <p class="t-h3" style="margin-top:70px;color:#f2f2f2">November 27 to 29, 2026</p><p class="ko">2026년 11월 27일부터 29일까지, 고양 킨텍스</p></div>${folio(17)}</section>`);
+// 18 감사
+pages.push(`<section class="page" id="p18"><div class="pad"><h1 class="t-h1">Thank you</h1><p class="ko-lg" style="margin-top:14px">함께해 주셔서 감사합니다</p>
+ <p class="en" style="margin-top:44px;max-width:900px;font-size:26px">Thank you to Root Impact, the partner universities and every student who took part in 2026.</p>
+ <p class="ko" style="margin-top:8px;font-size:23px">${ph('루트임팩트와 함께하는 대학,/2026년을 함께한 모든 학생에게 감사드립니다.')}</p>
+ <div style="position:absolute;left:0;right:0;top:620px;display:grid;grid-template-columns:repeat(5,1fr);gap:30px 22px">${UNIS.map(u=>`<div class="sym"><img src="${A}symbols/${u[0]}" alt=""></div>`).join('')}</div></div>${folio(18)}</section>`);
+// 19 뒷표지
+pages.push(`<section class="page dark" id="p19" style="--bgc:#212120"><div class="pad"><div style="position:absolute;left:0;top:0;color:#f2f2f2">${MARK('#f2f2f2',72)}</div>
+ <div style="position:absolute;left:0;bottom:120px"><p class="t-h2" style="color:#f2f2f2">University Impact Alliance</p><p class="ko" style="margin-top:4px">대학 임팩트 얼라이언스</p><p class="en" style="margin-top:40px;font-size:24px">uia-impact.org</p></div></div></section>`);
+document.getElementById('root').innerHTML=pages.join('');
+const q=new URLSearchParams(location.search); const p=q.get('p');
+if(p==='all') document.body.dataset.all='1'; else { const el=document.getElementById('p'+(p??0)); if(el) el.classList.add('on'); }
+</script>
+</body>
+</html>
