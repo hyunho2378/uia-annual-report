@@ -4,7 +4,7 @@ import { PageFlip } from 'page-flip'
 import { manifest } from './manifest'
 
 const RATIO = 4 / 3 // 높이 / 너비
-const src = (i) => '/pages/p-' + String(i).padStart(2, '0') + '.webp'
+const src = (i) => import.meta.env.BASE_URL + 'pages/p-' + String(i).padStart(2, '0') + '.webp'
 
 function UiaMark() {
   return (
