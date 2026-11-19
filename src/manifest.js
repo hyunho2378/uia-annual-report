@@ -9,7 +9,7 @@ export const manifest = {
     { id: 'chuncheon', en: 'Impactthon Chuncheon', ko: '임팩톤@춘천', page: 6 },
     { id: 'festa', en: 'Social Value Festa', ko: '사회적가치 페스타', page: 9 },
     { id: 'gyeongju', en: 'Gyeongju Forum', ko: '경주 포럼', page: 12 },
-    { id: 'people', en: 'In their words', ko: '참여 학생의 말', page: 15 },
+    { id: 'people', en: 'Students', ko: '참여 학생', page: 15 },
     { id: 'hall', en: 'UIA Special Hall', ko: 'UIA 특별관', page: 17 },
   ],
 }
